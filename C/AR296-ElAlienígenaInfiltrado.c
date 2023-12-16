@@ -1,26 +1,14 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <queue>
-#include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
 
-using namespace std;
 
-using vii = vector<pair<int, int>>;
+int errno;
+int i;
 
-/* Para mejorar el rendimiento del compilador
-static const int fast_io = []()
-{
-    std::ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    return 0;
-}();
-
-#pragma GCC optimize("Ofast","inline","ffast-math","unroll-loops","no-stack-protector")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native","f16c")
-static const auto fast = []() { std::ios_base::sync_with_stdio(false); std::cin.tie(0); std::cout.tie(0); return 0; } ();
-*/
+struct pair {
+    int first, second;
+};
 
 // Enunciado: Nos dan 3 enteros "C", "F", enteros de un intervalo y "N" numero de tareas.
 //  Tenemos que calcular el minimo numero de tareas para rellenar elintervalo [C,F), 
@@ -39,17 +27,17 @@ static const auto fast = []() { std::ios_base::sync_with_stdio(false); std::cin.
 // Procesamos todas las tareas que empiezan al mismo tiempo que "C" para guardar en "fin"
 //  la tarea que termine mas tarde.
 // Una vez procesado la parte inicial, recorremos la parte restante del vector de tareas 
-//  y por cada iteracion buscamos la tarea que termine más tarde, de entre las no procesadas que
+//  y por cada iteracion buscamos la tarea que termine mï¿½s tarde, de entre las no procesadas que
 //  empiecen antes que "fin". El tiempo mas longevo se almacena en "fin" para seguir con el algoritmo.
 // Complejidad Espacial: O(2n+6) = O(n). 
 //  Por el vector de tareas, n tareas con 2 enteros, y las variables locales
 // Complejidad Temporal: O(n) en el caso peor mira todas las tareas.
-int voraz(int C, int F, const vii& trabajos) {
+int voraz(int n, int C, int F, struct pair trabajos[]) {
     // Entero de retorno, si ret==-1 Imposible
     int ret = (trabajos[0].first > C ? -1 : 0); 
     int act = 0;                    // numero actual de tareas usadas
     int fin = trabajos[0].second;   // tiempo mas longevo abarcado actualmente
-    int i = 1, n = trabajos.size(); // iteradores para recorrer el vector
+    int i = 1;                      // iteradores para recorrer el vector
 
     // vector<int> usados(n, 0); ver que tareas se usan para comprobar la optimalidad
     // int iUsado;
@@ -109,27 +97,32 @@ int voraz(int C, int F, const vii& trabajos) {
 // Sigue siendo solucion y optima.
 // Procedemos asi hasta que el vector Y sea igual al X. Por lo que si es optimo.
 
-bool resuelveCaso() {
-    int C, F, N;
-    cin >> C >> F >> N;
-    if (!C && !F && !N) return false; // centinela
+// Funcion comparacion para QuickSort
+int compare(const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);
+}
 
-    vii trabajos;
-    int c, f;
-    for (int i = 0; i < N; i++) {
-        cin >> c >> f;
-        trabajos.push_back({ c,f });
+int resuelveCaso() {
+    int C, F, N;
+    scanf("%d %d %d", &C, &F, &N);
+    //if (errno != 0) perror("scanf, C F N\n"); 
+    if (!C && !F && !N) return 0; // centinela
+
+    struct pair trabajos[N];
+    for (i = 0; i < N; i++) {
+        scanf("%d %d", &trabajos[i].first, &trabajos[i].second);   
+        //if (errno != 0) perror("scanf, vector\n");      
     }
-    sort(trabajos.begin(), trabajos.end());
+    qsort(trabajos, N, sizeof(struct pair), compare);
 
     // Si N == 0 no se puede completar el intervalo, 
     //  sabemos que C y F son distintos de 0 por la centinela
-    int ret = (N > 0 ? voraz(C, F, trabajos) : -1);
+    int ret = (N > 0 ? voraz(N, C, F, trabajos) : -1);
 
-    if (ret == -1) cout << "Imposible\n";
-    else cout << ret << "\n";
+    if (ret == -1) printf("Imposible\n");
+    else printf("%d\n", ret);
 
-    return true;
+    return 1;
 }
 
 /* Ejemplos de casos
@@ -170,17 +163,7 @@ Imposible
 
 
 int main() {
-#ifndef DOMJUDGE
-    std::ifstream in("datos.txt");
-    auto cinbuf = std::cin.rdbuf(in.rdbuf());
-#endif
-
     while (resuelveCaso());
-
-#ifndef DOMJUDGE 
-    std::cin.rdbuf(cinbuf);
-    system("PAUSE");
-#endif
 
     return 0;
 }

@@ -1,26 +1,15 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <queue>
-#include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
 
-using namespace std;
 
-using vi = vector<int>;
+int errno;
+int i;
 
-/* Para mejorar el rendimiento del compilador
-static const int fast_io = []()
-{
-    std::ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    return 0;
-}();
-
-#pragma GCC optimize("Ofast","inline","ffast-math","unroll-loops","no-stack-protector")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,tune=native","f16c")
-static const auto fast = []() { std::ios_base::sync_with_stdio(false); std::cin.tie(0); std::cout.tie(0); return 0; } ();
-*/
+// En C utilizamos int[], ya que en la universidad no les gusta poner
+// variables globales.
+// int baterias[100000];
+// o con malloc en el main, para que sea dinamica
 
 // Enunciado: 
 // Nos dan primero un entero "nCasos" con el numero de casos
@@ -73,16 +62,19 @@ Salida:
 //  ordenandolo de manera creciente, con coste O(nlogn) como puede ser el algoritmo QuickSort.
 // Una vez ordenado utilizamos las baterias no procesadas de los extremos, si suman mas que V
 //  se juntan las baterias y marcamos como usadas (X[i]=j y X[j]=i).
-// Si no suman mas que V utilizamos la bateria siguiente a la mas pequeña. Asi hasta que i>=j
+// Si no suman mas que V utilizamos la bateria siguiente a la mas pequeï¿½a. Asi hasta que i>=j
 // ya habran sido procesadas todas las baterias.
 
 // Complejidad Espacial: O(n+4) = O(n) almacenamos las n baterias y 4 variables enteras.
 // Complejidad Temporal: O(n) en el caso peor mira todas las tareas.
-int voraz(int V, const vi& baterias) {
+int voraz(int N, int V, int baterias[]) {
     int ret = 0;
     // Punteros para el procesado del algoritmo
-    int i = 0, j = baterias.size() - 1;
-    //vi usados(baterias.size(),-1); se marcan inicialmente como no usados
+    int i = 0, j = N - 1;
+    /* Se marcan inicialmente como no usados
+    int usados[N];
+    for(i=0;i<N;i++) { usados[i]=-1; }
+    */
     while (i<j) {
         // Suma de las baterias de los extremos no procesados suma mas que V
         if (baterias[i] + baterias[j] >= V) {
@@ -93,9 +85,10 @@ int voraz(int V, const vi& baterias) {
         }
         else i++; // No suma por lo que la bateria i-esima se descarta
     }
-    
     return ret;
 }
+
+
 // Demostracion de optimalidad:
 // Por reduccion de diferencias.
 // X vector calculado con el algortimo voraz
@@ -108,39 +101,38 @@ int voraz(int V, const vi& baterias) {
 // Sigue siendo solucion y optima.
 // Procedemos asi hasta que el vector Y sea igual al X. Por lo que si es optimo.
 
+// Funcion comparacion para QuickSort
+int compare(const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);
+}
+
 void resuelveCaso() {
     int N, V; // N numero de baterias, V voltaje para que un coche funcione
-    cin >> N >> V;
-    vi baterias;
-    int v;
-    for (int i = 0; i < N; i++) {
-        cin >> v;
-        baterias.push_back(v);
+    scanf("%d %d", &N, &V);
+    //if (errno != 0) perror("scanf, N V\n"); 
+
+    int baterias[N];
+    for (i = 0; i < N; i++) {
+        scanf("%d", &baterias[i]);        
+        //if (errno != 0) perror("scanf vector\n"); 
     }
     // Ordenar de manera creciente 
     // Coste O(nlogn)
-    sort(baterias.begin(), baterias.end());
+    // Using qsort to sort the array
+    qsort(baterias, N, sizeof(int), compare);
 
-    cout << voraz(V, baterias) << "\n";
+    printf("%d\n", voraz(N, V, baterias));  
     
 }
 
-
-
 int main() {
-#ifndef DOMJUDGE
-    std::ifstream in("datos.txt");
-    auto cinbuf = std::cin.rdbuf(in.rdbuf());
-#endif
-
     int nCase;
-    cin >> nCase;
-    for (int i = 0; i < nCase; i++) resuelveCaso();
-
-#ifndef DOMJUDGE 
-    std::cin.rdbuf(cinbuf);
-    system("PAUSE");
-#endif
+    scanf("%d", &nCase);
+    //if (errno != 0) perror("scanf, nCase\n"); 
+    int j;
+    for (j = 0; j < nCase; j++) {
+        resuelveCaso();
+    }
 
     return 0;
 }
