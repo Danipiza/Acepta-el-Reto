@@ -1,8 +1,8 @@
 #include <iostream>
-#include <fstream>
+#include <fstream> // biblioteca para leer por fichero
 #include <vector>
 #include <queue>
-#include <algorithm>
+#include <algorithm> // biblioteca para ordenar (sort)
 
 using namespace std;
 
@@ -133,11 +133,39 @@ bool resuelveCaso() {
 }
 
 /* Ejemplos de casos
+N = [0, 200.000]
+intervalos [0, 1.000.000.000] se puede hacer con int
+
+Entrada:
 1 10 4
 2 8
 0 5
 7 11
 5 10
+
+0 1000000000 4
+0 250000000 
+250000000 500000000
+500000000 750000000
+750000000 1000000000
+
+0 1000000000 4
+0 250000000
+250000000 500000000
+500000000 750000000
+749999999 1000000000
+
+0 1000000000 4
+0 250000000
+250000000 500000000
+500000000 750000000
+750000000 999999999
+
+0 1000000000 4
+0 250000000
+250000000 500000000
+500000000 750000000
+500000000 1000000000
 
 0 3 2
 0 1
@@ -162,6 +190,10 @@ bool resuelveCaso() {
 
 Salida:
 2
+4
+4
+Imposible
+3
 Imposible
 Imposible
 Imposible

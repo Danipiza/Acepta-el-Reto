@@ -5,6 +5,7 @@
 
 int errno;
 int i;
+// No compruebo errores de funciones por el compilador de acepta el reto
 
 // En C utilizamos int[], ya que en la universidad no les gusta poner
 // variables globales.
