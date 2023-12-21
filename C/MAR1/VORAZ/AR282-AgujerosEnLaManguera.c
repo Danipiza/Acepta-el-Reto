@@ -4,7 +4,6 @@
 
 
 int errno;
-int i;
 // No compruebo errores de funciones por el compilador de acepta el reto
 
 // Enunciado: Tenemos una manguera con "N" agujeros, para
@@ -60,8 +59,9 @@ int resuelveCaso() {
     // no hay mas datos por leer, se acaba
     if(scanf("%d %d",&N,&L)==-1) return 0;
     
+    int i = 0;
     int v[N];
-    for (i = 0; i < N; i++) { scanf("%d", &v[i]); }
+    for (; i < N; i++) { scanf("%d", &v[i]); }
 
     printf("%d\n",voraz(N, L, v));
 
