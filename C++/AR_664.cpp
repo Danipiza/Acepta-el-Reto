@@ -1,37 +1,36 @@
-#include <stdio.h>
-int main() 
-{    
-    setbuf(stderr, NULL);
+#include <iostream>
+
+#pragma GCC optimize ("O2")
+
+static const int _ = []()
+{
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(NULL);
+    std::cout.tie(NULL);
+    return 0;
+}();
+
+using namespace std;
+
+
+int main() {
     int n, m, a;
     int ret, tmp;
-    scanf("%d",&n);
+    cin >> n;
     int i, j;
-    while (n != 0) 
-    {
+    while (n != 0) {
         ret = 800;
-        i = 0;
-        while(i<n)
-        {
-            scanf("%d",&m);
+        for (i = 0; i < n; i++) {
+            cin >> m;
             tmp = 0;
-            j = 0;
-            while(j<m)
-            {
-                scanf("%d",&a);
-                if (tmp < a) 
-                {
-                    tmp = a;
-                }
-                ++j;
+            for (j = 0; j < m; j++) {
+                cin >> a;
+                if (tmp < a) tmp = a;
             }
-            if (ret > tmp) 
-            {
-                ret = tmp;
-            }
-            ++i;
+            if (ret > tmp) ret = tmp;
         }
-        printf("%d\n",ret);
-        scanf("%d",&n);
+        cout << ret << "\n";
+        cin >> n;
     }
     return 0;
 }
