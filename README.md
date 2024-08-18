@@ -49,11 +49,16 @@ Están resueltos todos los ejercicios de "¡Acepta el Reto!", en los tres lengua
 >  AQUI
 > </a> para solicitar ayuda para algún ejercicio. (excepto por el 391. El profesor de música).
 
+```
+EDatos: Estructura de Datos
+PD: Programación Dinámica
+```
+
 ### Problemas 
 | Nº | Name | Type | C++ | C | Java | 
 |:--:|--|--|:--:|:--:|:--:|
-| 100 | [Constante de Kaprekar](https://aceptaelreto.com/problem/statement.php?id=100) | TODO | [AR_100.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_100.cpp) | [AR_100.c](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C/AR_100.c) | [AR_100.java](https://github.com/Danipiza/Acepta-el-Reto/tree/main/JAVA/AR_100.java) |
-| 101 | [Cuadrados diabólicos y esotéricos](https://aceptaelreto.com/problem/statement.php?id=101) | TODO | [AR_101.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_101.cpp) | [AR_101.c](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C/AR_101.c) | [AR_101.java](https://github.com/Danipiza/Acepta-el-Reto/tree/main/JAVA/AR_101.java) |
+| 100 | [Constante de Kaprekar](https://aceptaelreto.com/problem/statement.php?id=100) | Iterativo | [AR_100.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_100.cpp) | [AR_100.c](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C/AR_100.c) | [AR_100.java](https://github.com/Danipiza/Acepta-el-Reto/tree/main/JAVA/AR_100.java) |
+| 101 | [Cuadrados diabólicos y esotéricos](https://aceptaelreto.com/problem/statement.php?id=101) | Iterativo, EDatos, PD | [AR_101.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_101.cpp) | [AR_101.c](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C/AR_101.c) | [AR_101.java](https://github.com/Danipiza/Acepta-el-Reto/tree/main/JAVA/AR_101.java) |
 | 102 | [Encriptación de mensajes](https://aceptaelreto.com/problem/statement.php?id=102) | TODO | [AR_102.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_102.cpp) | [AR_102.c](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C/AR_102.c) | [AR_102.java](https://github.com/Danipiza/Acepta-el-Reto/tree/main/JAVA/AR_102.java) |
 | 103 | [Problemas de Herencia](https://aceptaelreto.com/problem/statement.php?id=103) | TODO | [AR_103.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_103.cpp) | [AR_103.c](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C/AR_103.c) | [AR_103.java](https://github.com/Danipiza/Acepta-el-Reto/tree/main/JAVA/AR_103.java) |
 | 104 | [Móviles](https://aceptaelreto.com/problem/statement.php?id=104) |  | [AR_104.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_104.cpp) | [AR_104.c](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C/AR_104.c) | [AR_104.java](https://github.com/Danipiza/Acepta-el-Reto/tree/main/JAVA/AR_104.java) |
