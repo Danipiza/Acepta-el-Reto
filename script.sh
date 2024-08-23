@@ -1,19 +1,15 @@
 #!/bin/bash
 
+# argument is provided
+if [ -z "$1" ]; then
+    echo "Error: No problems string provided."
+    exit 1
+fi
 
-problems_string="Added exercises ["
+# commit message
+problems_string="Added exercises [$1]"
 
-# Loop through each variable and concatenate it to the string
-for var in "$@"
-do
-    problems_string="$problems_string$var, "
-done
-
-# remove last char
-problems_string="${problems_string::-2}"
-problems_string="$problems_string]"
-
-
+# github
 git add . &&
 git commit -m "$problems_string" &&
 git push
