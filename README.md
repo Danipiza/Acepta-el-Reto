@@ -20,26 +20,26 @@ Están resueltos todos los ejercicios de "¡Acepta el Reto!", en los tres lengua
 
 ## Curso 
 
-### (FAL) Fundamentos de Algoritmia 
-- [T3.]() Diseño y análisis de algoritmos iterativos.
-- [T4.]() Diseño y análisis de algoritmos recursivos.
-- [T5.]() Algoritmos de divide y vencerás. 
-- [T6.]() Algoritmos de vuelta atrás.
+### (FAL) [Fundamentos de Algoritmia](https://github.com/Danipiza/Acepta-el-Reto/tree/main/.UCM/FAL/README.md) 
+- T3. Diseño y análisis de algoritmos iterativos.
+- T4. Diseño y análisis de algoritmos recursivos.
+- T5. Algoritmos de divide y vencerás. 
+- T6. Algoritmos de vuelta atrás.
 
 ### (ED) Estructuras de datos 
-- [T2.]() Tipos de datos lineales.
-- [T3.]() Tipos de datos arborescentes.
-- [T4.]() Diccionarios.
+- T2. Tipos de datos lineales.
+- T3. Tipos de datos arborescentes.
+- T4. Diccionarios.
 
 ### (MAR1) Métodos algorítmicos en resolución de problemas I 
-- [T2.]() Árboles de búsqueda avanzados.
-- [T3.]() Colas con prioridad y montículos.
-- [T4.]() Grafos.
-- [T6.]() Algoritmos voraces.
+- T2. Árboles de búsqueda avanzados.
+- T3. Colas con prioridad y montículos.
+- T4. Grafos.
+- T6. Algoritmos voraces.
 
 ### (MAR2) Métodos algorítmicos en resolución de problemas II 
-- [T1.]() Programación dinámica.
-- [T2.]() Ramificación y poda.
+- T1. Programación dinámica.
+- T2. Ramificación y poda.
 
 ---
 
