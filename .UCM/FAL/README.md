@@ -72,7 +72,7 @@ En esta página aparece el periodo de clases de Fundamentos de Algoritmia (FAL) 
 | 472 | [Caminando voy](https://aceptaelreto.com/problem/statement.php?id=472) | Iterativo | [AR_472.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_472.cpp) | 
 | 507 | [Tándem](https://aceptaelreto.com/problem/statement.php?id=507) | Iterativo | [AR_507.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_507.cpp) | 
 | 528 | [El extraño caso de la multiplicación](https://aceptaelreto.com/problem/statement.php?id=528) | Iterativo | [AR_528.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_528.cpp) |
-| 632 | [Devorando el turrón](https://aceptaelreto.com/problem/statement.php?id=632) | TODO | [AR_632.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_632.cpp) | 
+| 632 | [Devorando el turrón](https://aceptaelreto.com/problem/statement.php?id=632) | Iterativo | [AR_632.cpp](https://github.com/Danipiza/Acepta-el-Reto/tree/main/C%2B%2B/AR_632.cpp) | 
 
 
 ## Algoritmos recursivos
