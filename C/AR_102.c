@@ -39,7 +39,8 @@ void decodificar(char* s, char* ret) {
             else if (tmp>'Z') tmp='A'-1+(tmp-'Z');
             
             ret[j++]=tmp;
-        } else if (islower(c)) {
+        } 
+        else if (islower(c)) {
             int tmp=c+desplazamiento;
 
             if (tmp<'a')      tmp='z'+1-('a'-tmp);

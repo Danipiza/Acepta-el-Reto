@@ -149,7 +149,8 @@ int es_esoterico(int n, int CM) {
         
         // Comprobacion de suma y el centro
         if (sum!=CM2 || M[mitad][mitad]*4!=CM2) return 0;
-    } else { // Si n es par  
+    } 
+    else { // Si n es par  
         
         // Suma de laterales
         sum=M[0][mitad-1]+M[0][mitad]+ 
@@ -209,7 +210,8 @@ int resuelveCaso() {
     if (es_diabolico(n, &CM)) {
         if (es_esoterico(n, CM)) printf("ESOTERICO\n");         
         else printf("DIABOLICO\n");        
-    } else printf("NO\n");
+    } 
+    else printf("NO\n");
     
     return 1;
 }

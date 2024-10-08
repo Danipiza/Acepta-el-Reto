@@ -3,8 +3,7 @@
 #include <string.h>
 
 // Funcion para ordenar una cadena
-int compare(const void *a, const void *b) 
-{
+int compare(const void *a, const void *b) {
     return (*(char*)a-*(char*)b);
 }
 
@@ -36,8 +35,7 @@ int compare(const void *a, const void *b)
 
 // Precondicion: Cuando se puede ejecutar la funcion
 // Pre = { 0 <= num.size() <= 4 }
-int kaprekar(char* num) 
-{
+int kaprekar(char* num) {
     // CASO ESPECIAL (repdigits). 
     // El numero introducido por terminal no tiene al menos dos digitos diferentes.
     if (num[0]==num[1] && num[2]==num[3] 
@@ -66,7 +64,8 @@ int kaprekar(char* num)
                 // '0' -> 48. Por eso se suma 48 al valor obtenido,
                 // para obtener el caracter ASCII correspondiente
                 tmp[3-i]='0'+resta;
-            } else {
+            } 
+            else {
                 acarreo=1;
                 tmp[3-i]='0'+10+resta; // '0'+10+resta
             }
