@@ -17,11 +17,11 @@ map<char, string> mapa={{'D', "DESAYUNOS"},
 						{'C', "COPAS"}};
 
 string conversion(char categoria) {
-	if (categoria == 'D') return "DESAYUNOS";
-	else if (categoria == 'A') return "COMIDAS";
-	else if (categoria == 'M') return "MERIENDAS";
-	else if (categoria == 'I') return "CENAS";
-	else if (categoria == 'C') return "COPAS";
+	if 		(categoria=='D') return "DESAYUNOS";
+	else if (categoria=='A') return "COMIDAS";
+	else if (categoria=='M') return "MERIENDAS";
+	else if (categoria=='I') return "CENAS";
+	else if (categoria=='C') return "COPAS";
 }
 
 string categoria_maximo(map<char, double> ventas) {
@@ -107,7 +107,10 @@ int main() {
 	return 0;
 }
 
-/*
+/* 
+
+# -- USANDO MAPAS -------------------------------------------------------------
+
 bool resuelveCaso() {
 	map<char, double> ventas;
 	ventas['D']=0; ventas['A']=0;
@@ -153,4 +156,3 @@ int main() {
 
 	return 0;
 }*/
-(c) Acepta el reto, 2013 - 2024
